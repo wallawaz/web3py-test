@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "web3py-test"
+version = "0.1.0"
+description = ""
+authors = ["wallawaz <bwallad@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+web3 = "^5.11.0"
+click = "^7.1.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+
+[tool.poetry.scripts]
+poll-contracts = "web3py_test.cli:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
