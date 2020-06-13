@@ -11,9 +11,11 @@ click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
+ipdb = "^0.13.2"
 
 [tool.poetry.scripts]
 poll-contracts = "web3py_test.cli:main"
+historic-exchanges = "web3py_test.cli:main_historic"
 
 [build-system]
 requires = ["poetry>=0.12"]
