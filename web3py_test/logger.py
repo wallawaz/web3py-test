@@ -3,7 +3,7 @@ import logging
 logging.basicConfig(
     format='%(asctime)s %(levelname)-8s %(message)s',
     level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S'
+    datefmt='%b %d %Y %H:%M:%S.%f'
 )
 
-logger = logging.getLogger()
+LOGGER = logging.getLogger()

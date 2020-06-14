@@ -1,21 +1,14 @@
-from timeit import default_timer
-from web3.auto import w3
 import os
+from time import time_ns
+
+from web3.auto import w3
 
 PROVIDER = os.getenv("WEB3_PROVIDER_URI")
 
 def main():
-    start = default_timer()
-    blocks = set()
-    for i in range(len(1000)):
-        blocks.add(w3.eth.getBlock("latest"))
-    total_time = default_timer() - start
-
-    blocks = sorted(list(blocks))
-
-    print(f"Provider: {PROVIDER}")
-    print(f"{len(blocks)} blocks: {blocks}")
-    print(f"Total time: {total_time}")
+    for i in range(1000):
+        latest_block = w3.eth.getBlock("latest").get("transactionsRoot")
+        print(f"{time_ns()}: tx: {latest_block.hex()}")
 
 if __name__ == "__main__":
     main()

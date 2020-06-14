@@ -2,7 +2,7 @@ import asyncio
 from web3.auto import w3
 from web3 import Web3
 from .abi import ABI, UNISWAP_ABI
-from .logger import logger
+from .logger import LOGGER
 
 class Poller:
     def __init__(self, contract_addresses, fromBlock="latest", abi=None):
@@ -27,7 +27,7 @@ class Poller:
         for addr in contract_addresses:
             C = w3.eth.contract(Web3.toChecksumAddress(addr), abi=self.abi)
             name = C.functions.name().call()
-            name = logger.info(f"Polling: {name}")
+            name = LOGGER.info(f"Polling: {name}")
 
             # if self.abi_type == "uniswap":
             #     exchange = C.functions.getEthToTokenOutputPrice(tokens_bought=str(1).encode().call()
@@ -54,4 +54,4 @@ class Poller:
 
     def handle_event(self, event):
         """Currently just printing"""
-        logger.info(f"EVENT: {event}")
+        LOGGER.info(f"EVENT: {event}")

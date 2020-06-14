@@ -1,7 +1,7 @@
 from web3.auto import w3
 from web3 import Web3
 from .abi import NEW_EXCHANGE_ABI
-from .logger import logger
+from .logger import LOGGER
 
 
 class HistoricExchanges:
@@ -14,7 +14,7 @@ class HistoricExchanges:
 
     def run(self):
         contract = w3.eth.contract(self.factory_contract, abi=NEW_EXCHANGE_ABI)
-        logger.info(f"from block: {self.from_block}")
+        LOGGER.info(f"from block: {self.from_block}")
 
         event_filter = contract.events.NewExchange.createFilter(fromBlock=self.from_block)
         for event in event_filter.get_all_entries():
