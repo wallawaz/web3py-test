@@ -264,6 +264,17 @@ test = ["hypothesis (>=4.43.0,<5.0.0)", "pytest (>=3.4.1,<4.0.0)", "pytest-pytho
 
 [[package]]
 category = "main"
+description = "Etherscan.io API wrapper"
+name = "etherscan"
+optional = false
+python-versions = "*"
+version = "0.3.0"
+
+[package.dependencies]
+requests-cache = "*"
+
+[[package]]
+category = "main"
 description = "hexbytes: Python `bytes` subclass that decodes hex, with a readable console output"
 name = "hexbytes"
 optional = false
@@ -669,6 +680,17 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
 
 [[package]]
 category = "main"
+description = "Persistent cache for requests library"
+name = "requests-cache"
+optional = false
+python-versions = "*"
+version = "0.5.2"
+
+[package.dependencies]
+requests = ">=1.1.0"
+
+[[package]]
+category = "main"
 description = "A package for Recursive Length Prefix encoding and decoding"
 name = "rlp"
 optional = false
@@ -813,7 +835,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "c1616e405b71a03e58ff7e8c867668ce52c348c6e9b16ae1ade879d5400fdd3b"
+content-hash = "7bd2ae9dfe3e5a78a30de9a1565781ab433df71e2a6fbb5e9af0ae8dbaee8b5f"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -894,6 +916,10 @@ eth-typing = [
 eth-utils = [
     {file = "eth-utils-1.9.0.tar.gz", hash = "sha256:677d68dfcdc60875459d6e1a0a9ffb80117f9a204096158931f94329ba477202"},
     {file = "eth_utils-1.9.0-py3-none-any.whl", hash = "sha256:3f03da7c445c73e9c353dbb400853caf75da988a5884d8b4fafa6c5d21641352"},
+]
+etherscan = [
+    {file = "etherscan-0.3.0-py3-none-any.whl", hash = "sha256:3163cdbceba8728e852989dafd0c56e0421e60f16a1199137edb100d427ff5e7"},
+    {file = "etherscan-0.3.0.tar.gz", hash = "sha256:366e3625d74cc0557ea6119d31a9b5ac199b08c4b6a00b82a3e9e21d974485c7"},
 ]
 hexbytes = [
     {file = "hexbytes-0.2.1-py3-none-any.whl", hash = "sha256:a093a5533aa63ca6614246fa97feb693b5813f9e736c38b68fe4e2d8fcc35aa5"},
@@ -1068,6 +1094,10 @@ pywin32 = [
 requests = [
     {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
     {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
+]
+requests-cache = [
+    {file = "requests-cache-0.5.2.tar.gz", hash = "sha256:813023269686045f8e01e2289cc1e7e9ae5ab22ddd1e2849a9093ab3ab7270eb"},
+    {file = "requests_cache-0.5.2-py2.py3-none-any.whl", hash = "sha256:81e13559baee64677a7d73b85498a5a8f0639e204517b5d05ff378e44a57831a"},
 ]
 rlp = [
     {file = "rlp-1.2.0-py2.py3-none-any.whl", hash = "sha256:97b7e770f16442772311b33e6bc28b45318e7c8def69b9df16452304e224e9df"},
